@@ -1,0 +1,9 @@
+user-agent: *
+
+Disallow: /rentals
+Disallow: /posts
+Disallow: /activities
+Disallow: /attractions
+Disallow: /destinations
+
+Sitemap: https://oneclicktourismllc.com/sitemap.xml
