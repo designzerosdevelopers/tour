@@ -1,0 +1,64 @@
+# Laravel specific
+/vendor/
+/node_modules/
+/public/storage
+/storage/*.key
+/storage/app/public
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/testing
+/storage/framework/views
+/storage/logs
+
+# Ignore environment and config files
+.env
+.env.*.php
+.phpunit.result.cache
+
+# Ignore IDE and editor config files
+/.idea
+/.vscode
+
+# Ignore Laravel service files
+Homestead.yaml
+Homestead.json
+/.phpunit.result.cache
+
+# Composer and npm specific
+composer.lock
+package-lock.json
+yarn.lock
+
+# Ignore compiled files and cache
+/public/hot
+/public/storage
+/public/vendor
+/public/mix-manifest.json
+/mix-manifest.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/test-output
+
+# Ignore backup or hidden files
+*~
+*.backup
+*.swp
+*.DS_Store
+Thumbs.db
+Desktop.ini
+*.bak
+
+# Laravel Horizon (if using Laravel Horizon)
+horizon.pid
+
+# Ignore debug logs and coverage
+*.log
+/storage/debugbar
+
+# Sentry and crash reports
+*.sentry-cli
+
+# Temporary and cache files
+/storage/tmp
+/cache/
