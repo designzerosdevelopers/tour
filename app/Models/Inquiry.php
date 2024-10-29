@@ -20,7 +20,11 @@ class Inquiry extends Model
         'checked',
         'child_tickets',
         'adult_tickets',
-        'private_transport'
+        'private_transport',
+        'pickup',
+        'dropoff',
+        'passengers',
+        'remarks'
 
     ];
 }

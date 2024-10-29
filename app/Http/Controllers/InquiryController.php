@@ -24,7 +24,7 @@ class InquiryController extends Controller
             'name' => 'required|string',
             'email' => 'required|email',
         ]);
-
+        Log::info($request->all());
         $this->sendInquiryMail($request->all());
         Inquiry::create($request->all());
         return response()->json(['success' => 'Email queued successfully']);
