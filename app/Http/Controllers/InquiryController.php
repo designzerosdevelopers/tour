@@ -3,27 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Mail\InquiryMail;
 use App\Models\Activity;
 use App\Models\Tour;
 use App\Models\Vehicle;
 use App\Models\Inquiry;
 use App\Models\Subscription;
-use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
+use App\Traits\MailTrait;
+
 
 class InquiryController extends Controller
 {
+    use MailTrait;
     public function send(Request $request)
     {
+
+
         $request->validate([
             'phone' => 'required',
             'name' => 'required|string',
             'email' => 'required|email',
         ]);
 
-        $data = $request->all();
-
-        Mail::to('example@example.com')->queue(new InquiryMail($data));
+        $this->sendInquiryMail($request->all());
         Inquiry::create($request->all());
         return response()->json(['success' => 'Email queued successfully']);
     }
@@ -57,6 +59,5 @@ class InquiryController extends Controller
     {
         Subscription::create($request->all());
         return response()->json('success');
-
     }
 }

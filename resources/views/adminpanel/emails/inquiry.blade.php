@@ -41,10 +41,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>New Inquiry Received</h1>
+        <h1>{{ $data['heading'] ?? 'Not provided' }}</h1>
         <div class="details">
-            <p><strong>Name:</strong> {{ $data['name'] }}</p>
-            <p><strong>Email:</strong> {{ $data['email'] }}</p>
+            <p><strong>Name:</strong> {{ $data['name'] ?? 'Not provided' }}</p>
+            <p><strong>Email:</strong> {{ $data['email'] ?? 'Not provided' }}</p>
             <p><strong>Phone:</strong> {{ $data['phone'] ?? 'Not provided' }}</p>
             <p><strong>Selected Date:</strong> {{ $data['selected_date'] ?? 'N/A' }}</p>
             <p><strong>Time Slot:</strong> {{ $data['time_slot'] ?? 'N/A' }}</p>

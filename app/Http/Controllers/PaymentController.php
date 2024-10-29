@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
 use App\Models\Inquiry;
-use App\Mail\PaymentMail;
 use App\Traits\CurrencyConverterTrait;
-
+use App\Traits\MailTrait;
 use Illuminate\Support\Facades\Mail;
 
 class PaymentController extends Controller
 {
+    use MailTrait;
     use CurrencyConverterTrait;
     /**
      * Display a listing of the resource.
@@ -64,15 +64,8 @@ class PaymentController extends Controller
             $request['paid'] = true;
             $request['amount'] =  $this->getAEDCurrency($request->amount, $request->currency);
             Inquiry::create($request->all());
+            $this->sendPaymentMail($request->all());
 
-            Mail::to('example@example.com')->queue(new PaymentMail([
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'amount' => $request->amount,
-                'currency' => $request->currency,
-                'url' => $request->url,
-            ]));
 
             return redirect($session->url);
         } catch (\Exception $e) {

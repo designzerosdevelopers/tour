@@ -41,7 +41,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Payment Received</h1>
+        <h1>{{ $data['heading'] }}</h1>
         <div class="details">
             <p><strong>Name:</strong> {{ $data['name'] }}</p>
             <p><strong>Email:</strong> {{ $data['email'] }}</p>
