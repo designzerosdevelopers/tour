@@ -22,14 +22,12 @@ function meta()
     $metaKeywords = '';
 
     $routeName = request()->route()->getName();
-
-    if (str_ends_with($routeName, '.index')) {
+    if (str_ends_with($routeName, '.index') || $routeName == 'home') {
         $data = PageSetting::where('slug', request()->route()->uri())->firstOrFail();
         $metaTitle = $data->meta_title ?? $defaultTitle;
         $metaDescription = $data->meta_description ?? '';
         $metaKeywords = $data->meta_keyword ?? '';
     } elseif (str_ends_with($routeName, '.show')) {
-
         $data = Metadata::where('model_type', basename(Illuminate\Support\Facades\Request::path()))->where('model_id', 0)->first();
         $metaTitle = $data->meta_title ?? $defaultTitle;
         $metaDescription = $data->meta_description ?? '';
@@ -64,11 +62,11 @@ function getModel($module)
         return Attraction::with('images')->get();
     } elseif ($module == 'Destination') {
         $destinations = Destination::where('status', 1)
-        ->with('image', 'tours', 'activities')
-        ->latest() // Orders by `created_at` in descending order
-        ->take(7)  // Limits the result to 7 records
-        ->get();
-    
+            ->with('image', 'tours', 'activities')
+            ->latest() // Orders by `created_at` in descending order
+            ->take(7)  // Limits the result to 7 records
+            ->get();
+
         return $destinations;
     } elseif ($module == '5-Posts') {
         return Post::where('published', 1)->with('category', 'images')->orderBy('id', 'desc')->take(5)->get();

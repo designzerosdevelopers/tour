@@ -28,19 +28,14 @@ use App\Http\Controllers\Admin\SubscriptionController;
 use App\Http\Controllers\Admin\WidgetController;
 
 
-Route::get('/mymail', [GeneralController::class, 'mymail'])->name('mymail');
 
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
 Route::get('register', [AuthController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [AuthController::class, 'register']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('user', function () {
-    echo 'Payment was successful';
-})->name('user');
-Route::get('checkout-cancel', function () {
-    echo 'checkout cancel';
-})->name('checkout.cancel');
+
+
 
 Route::get('/', [GeneralController::class, 'index'])->name('home');
 Route::get('privacy-policy', [GeneralController::class, 'index'])->name('privacy.policy');

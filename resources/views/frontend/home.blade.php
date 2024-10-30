@@ -36,7 +36,6 @@
             }
         }
 
-        /* Navigation Arrows */
         .navigation-arrows {
             position: absolute;
             bottom: 2%;
@@ -58,7 +57,6 @@
             color: rgb(255, 255, 255);
         }
 
-        /* Responsive search box */
         .box-search-advance {
             background-color: rgba(253, 253, 253, 0.8);
             position: absolute;
@@ -67,7 +65,6 @@
             transform: translate(-50%, -50%);
             z-index: 10;
             width: 550px;
-            /* Default width */
             padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -75,25 +72,19 @@
         @media (max-width: 768px) {
             .box-search-advance {
                 width: 90%;
-                /* Make it wider on mobile */
                 padding: 20px;
-                /* Adjust padding */
             }
 
             .navigation-arrows {
                 bottom: 5%;
-                /* Adjust arrow position */
                 right: 5%;
-                /* Adjust arrow position */
             }
         }
 
         @media (max-width: 480px) {
             .box-search-advance {
                 width: 95%;
-                /* Full width for very small screens */
                 padding: 15px;
-                /* Adjust padding */
             }
 
             #searchButton {
@@ -147,13 +138,13 @@
                     </div>
                 </div>
                 @if (empty($Homeimages) || $Homeimages->isEmpty())
-                <div class="sllide fadee" style="background: linear-gradient(45deg, rgb(255, 0, 0), navy);">
-                </div>
+                    <div class="sllide fadee" style="background: linear-gradient(45deg, rgb(255, 0, 0), navy);">
+                    </div>
                 @else
                     @foreach ($Homeimages as $image)
                         <div class="sllide fadee">
                             <img class="lazy" src="https://via.placeholder.com/600x400?text=Loading..."
-                            data-original="{{ asset($image['path'] . $image['file']) }}" alt="{{ $image['alt'] }}">
+                                data-original="{{ asset($image['path'] . $image['file']) }}" alt="{{ $image['alt'] }}">
                         </div>
                     @endforeach
                 @endif
@@ -357,7 +348,7 @@
                     <div class="row align-items-end">
                         <div class="col-lg-6 mb-30 text-center text-lg-start">
                             <h1 class="neutral-1000">Popular Destinations</h2>
-                            <p class="text-lg-medium neutral-500">Favorite destinations based on customer reviews</p>
+                                <p class="text-lg-medium neutral-500">Favorite destinations based on customer reviews</p>
                         </div>
                     </div>
                     <div class="box-list-populars">
@@ -402,20 +393,20 @@
                                 <div class="card-popular-2">
                                     <div class="card-info">
                                         <h1 class="neutral-500">Crafting Your Perfect Travel Experience</h2>
-                                        <div class="card-meta">
-                                            <div class="meta-links">Browse <br>All destinations</div>
-                                            <div class="card-button hover-up"> <a
-                                                    href="{{ route('destinations.index') }}">
-                                                    <svg width="10" height="10" viewbox="0 0 10 10"
-                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011"
-                                                            stroke="" stroke-linecap="round"
-                                                            stroke-linejoin="round">
-                                                        </path>
-                                                    </svg></a>
+                                            <div class="card-meta">
+                                                <div class="meta-links">Browse <br>All destinations</div>
+                                                <div class="card-button hover-up"> <a
+                                                        href="{{ route('destinations.index') }}">
+                                                        <svg width="10" height="10" viewbox="0 0 10 10"
+                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M5.00011 9.08347L9.08347 5.00011L5.00011 0.916748M9.08347 5.00011L0.916748 5.00011"
+                                                                stroke="" stroke-linecap="round"
+                                                                stroke-linejoin="round">
+                                                            </path>
+                                                        </svg></a>
+                                                </div>
                                             </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -623,9 +614,10 @@
                                     src="assets/imgs/page/homepage4/img-review.png" alt="Travila"><img class="dark-mode"
                                     src="assets/imgs/page/homepage4/img-review-dark.png" alt="Travila"></div>
                             <div class="card-video">
-                                <div class="card-image"><a class="btn btn-play popup-youtube"
+                                <div class="card-image"><a class="btn btn-play"
                                         href="https://www.youtube.com/watch?v=JXMWOmuR1hU"></a><img
-                                        src="assets/imgs/page/homepage4/img-payment.png" alt="Travila"></div>
+                                        src="assets/imgs/page/homepage4/img-payment.png" alt="Travila">
+                                </div>
                             </div>
                         </div>
                     </div>

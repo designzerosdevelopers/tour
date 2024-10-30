@@ -619,3 +619,22 @@ $(function () {
         threshold: 200
     });
 });
+
+//==================== currency select option ======================
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const currencyOptions = document.querySelectorAll('.currency-option');
+    const selectedCurrencyInput = document.getElementById('selectedCurrency');
+    const currencyForm = document.getElementById('currencyForm');
+
+    currencyOptions.forEach(option => {
+        option.addEventListener('click', function (e) {
+            e.preventDefault();
+            const selectedCurrency = this.getAttribute('data-value');
+            selectedCurrencyInput.value = selectedCurrency;
+            currencyForm.submit();
+        });
+    });
+
+});

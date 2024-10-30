@@ -2,24 +2,29 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-    
-    <meta name="title" content="Evening desert safari dubai | desert safari dubai | rental cars">
-<meta name="description" content="Experience Dubai most popular Evening desert safari dubai This thrilling adventure includes delicious BBQ dinner, and rent a car in dubai. rental cars">
-<meta name="keywords" content="evening desert safari dubai, desert safari dubai, rental cars, vehicle rental near me, auto rental near me, desert safari dubai booking, dubai trip package, dubai vacation packages, dubai package, dubai travel package, dubai desert safari packages, tours in dubai, morning desert safari dubai, desert safari dubai offers, desert trip dubai, desert safari dubai deals">
-<meta name="robots" content="index, follow">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="language" content="English">
 
-     <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSY6H16C62"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-VSY6H16C62');
-        </script>
-    
+    <meta name="title" content="Evening desert safari dubai | desert safari dubai | rental cars">
+    <meta name="description"
+        content="Experience Dubai most popular Evening desert safari dubai This thrilling adventure includes delicious BBQ dinner, and rent a car in dubai. rental cars">
+    <meta name="keywords"
+        content="evening desert safari dubai, desert safari dubai, rental cars, vehicle rental near me, auto rental near me, desert safari dubai booking, dubai trip package, dubai vacation packages, dubai package, dubai travel package, dubai desert safari packages, tours in dubai, morning desert safari dubai, desert safari dubai offers, desert trip dubai, desert safari dubai deals">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSY6H16C62"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-VSY6H16C62');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -32,14 +37,14 @@
 
     <script src="{{ asset('assets/js/axios.min.js') }}"></script>
     <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/imgs/template/logo.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/imgs/template/logo.png') }}">
     <link href=" {{ asset('assets/css/style.css?v=1.0.0') }}" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-    
+
 </head>
 
-        
+
 
 <body>
     <div id="preloader-active">
@@ -132,36 +137,16 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!-- Hidden input to store the selected currency -->
                             <input type="hidden" id="selectedCurrency" name="currency"
                                 value="{{ session('currency', 'AED') }}">
                         </div>
                     </form>
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            const currencyOptions = document.querySelectorAll('.currency-option');
-                            const selectedCurrencyInput = document.getElementById('selectedCurrency');
-                            const currencyForm = document.getElementById('currencyForm');
 
-                            currencyOptions.forEach(option => {
-                                option.addEventListener('click', function(e) {
-                                    e.preventDefault();
-
-                                    // Update the hidden input with the selected currency
-                                    const selectedCurrency = this.getAttribute('data-value');
-                                    selectedCurrencyInput.value = selectedCurrency;
-
-                                    // Submit the form
-                                    currencyForm.submit();
-                                });
-                            });
-                        });
-                    </script>
-                    <div class="d-none d-xxl-inline-block align-middle mr-15"><a class="btn btn-mode change-mode mr-15"
-                            href="#" data-bs-theme-value="dark"> <img class="light-mode"
-                                src="{{ asset('assets/imgs/template/icons/light.svg') }}" alt="Travila"><img
-                                class="dark-mode" src="{{ asset('assets/imgs/template/icons/light-w.svg') }}"
-                                alt="Travila"></a>
+                    <div class="d-none d-xxl-inline-block align-middle mr-15"><a
+                            class="btn btn-mode change-mode mr-15" href="#" data-bs-theme-value="dark"> <img
+                                class="light-mode" src="{{ asset('assets/imgs/template/icons/light.svg') }}"
+                                alt="Travila"><img class="dark-mode"
+                                src="{{ asset('assets/imgs/template/icons/light-w.svg') }}" alt="Travila"></a>
                     </div>
                     <div style="height: 42px;" class=" burger-icon-white">
                     </div>
